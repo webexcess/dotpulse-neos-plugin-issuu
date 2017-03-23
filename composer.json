@@ -2,7 +2,7 @@
     "name": "dotpulse/issuu",
     "type": "typo3-flow-plugin",
     "description": "Issuu as Content Element",
-    "version": "2.0.1",
+    "version": "2.1.0",
     "require": {
         "typo3/neos": "2.*"
     },
