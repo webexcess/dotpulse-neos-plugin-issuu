@@ -1,0 +1,34 @@
+'Dotpulse.Issuu:Embed':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
+    'Dotpulse.Base:SettingsMixin': TRUE
+  ui:
+    label: 'Embed Issuu'
+    icon: icon-file-text
+    group: special
+    position: 400
+
+  properties:
+    configid:
+      type: string
+      ui:
+        label: 'Config ID'
+        reloadPageIfChanged: TRUE
+        inspector:
+          group: settings
+          position: 100
+      validation:
+        'TYPO3.Neos/Validation/NumberValidator': []
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+    height:
+      type: string
+      defaultValue: 300
+      ui:
+        label: 'Höhe'
+        reloadPageIfChanged: TRUE
+        inspector:
+          group: settings
+          position: 110
+      validation:
+        'TYPO3.Neos/Validation/NumberValidator': []
+        'TYPO3.Neos/Validation/NotEmptyValidator': []

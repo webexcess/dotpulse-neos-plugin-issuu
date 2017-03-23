@@ -1,0 +1,21 @@
+prototype(TYPO3.Neos:Page) {
+	body.javascripts {
+		issuuApi = TYPO3.TypoScript:Tag {
+			tagName = 'script'
+			attributes.src = '//e.issuu.com/embed.js'
+			@position = 'end'
+			@if.isActiveAndHasEmbedOrIsBackend = ${q(node).find('[instanceof Dotpulse.Issuu:Embed]').is() || node.context.inBackend}
+		}
+	}
+}
+
+prototype(Dotpulse.Issuu:Embed) < prototype(TYPO3.Neos:Content) {
+	attributes {
+		class = TYPO3.TypoScript:RawArray {
+			default = 'issuuembed'
+			container = ${container ? 'container' : false}
+		}
+		style = ${'width:100%;height:' + q(node).property('height') + 'px;max-height:80vh'}
+		data-configid = ${q(node).property('configid')}
+	}
+}
